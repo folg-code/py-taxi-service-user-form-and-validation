@@ -3,7 +3,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import get_user_model
 
 
-from taxi.models import  Car
+from taxi.models import Car
 
 User = get_user_model()
 
@@ -19,7 +19,8 @@ class DriverCreationForm(UserCreationForm):
                 raise forms.ValidationError(
                     "License number must be exactly 8 characters.")
 
-            if (not license_number[:3].isupper() or not license_number[:3].isalpha()):
+            if (not license_number[:3].isupper()
+                    or not license_number[:3].isalpha()):
                 raise forms.ValidationError(
                     "First 3 characters must be uppercase letters.")
 
