@@ -4,6 +4,7 @@ from django.core.exceptions import ValidationError
 
 from taxi.models import Driver, Car
 
+
 class DriverCreationForm(UserCreationForm):
     class Meta(UserCreationForm.Meta):
         model = Driver
